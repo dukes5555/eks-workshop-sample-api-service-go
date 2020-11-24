@@ -14,7 +14,7 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          kubernetesDeploy(configs: "hello-k8s.yml", kubeconfigId: "jenkins_kconfig")
+          sh 'kubectl apply -f hello-k8s.yml -n devteam3'
         }
       }
     }

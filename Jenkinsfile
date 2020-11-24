@@ -14,7 +14,7 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          sh 'kubectl apply -f hello-k8s.yml -n devteam3'
+          sh '/usr/local/bin/kubectl apply -f hello-k8s.yml -n devteam3'
         }
       }
     }

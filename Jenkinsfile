@@ -13,10 +13,10 @@ pipeline {
 
     stage('Deploy App') {
       steps {
-        script {
+          withKubeConfig([credentialsId: 'jenkins_kconfig', serverUrl: 'https://A1216214A6E9FECA7124B1BAC5472DD6.yl4.us-east-1.eks.amazonaws.com']) {
           sh '/usr/local/bin/kubectl apply -f hello-k8s.yml -n devteam3'
+          }
         }
-      }
     }
 
   }

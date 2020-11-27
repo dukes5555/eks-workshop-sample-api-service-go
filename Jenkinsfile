@@ -13,8 +13,8 @@ pipeline {
 
     stage('Deploy App') {
       steps {
-          withKubeConfig([credentialsId: 'jenkins_kconfig', serverUrl: 'https://A1216214A6E9FECA7124B1BAC5472DD6.yl4.us-east-1.eks.amazonaws.com']) {
-          sh '/usr/local/bin/kubectl apply -f hello-k8s.yml -n devteam3'
+          withKubeConfig([credentialsId: 'k8stoken_eksclustertest2', serverUrl: 'https://0DE2BFAB8F2B9713C6D4A228829C7108.gr7.us-east-1.eks.amazonaws.com']) {
+          sh '/usr/local/bin/kubectl apply -f hello-k8s.yml -n devteam1'
           }
         }
     }
